@@ -41,6 +41,8 @@ public class GUI {
     private int pageNum = 0;
     private int legendOption = 0;
     private int maxPage = 0;
+    
+    private String sortBy = "";
 
 
     /**
@@ -179,7 +181,10 @@ public class GUI {
      * 
      */
     private void printDetails(SongAnalytics songAnalytics, Position p) {
-        GUIGlyph temp = new GUIGlyph(songAnalytics, p, legendOption);
+        GUIGlyph temp = new GUIGlyph(songAnalytics, p, legendOption, sortBy);
+
+        
+
         // Adds the Glyph to the Window
         window.addShape(temp.getBar1());
         window.addShape(temp.getBar11());
@@ -233,7 +238,7 @@ public class GUI {
      * OnClicked for sortArt
      */
     public void sortArtOnClicked(Button button) {
-
+        sortBy = "artist";
         songAnalytics = fileReader.sortBy(songAnalytics, 4);
         pageNum = 1;
         update();
@@ -245,7 +250,7 @@ public class GUI {
      * OnClicked for sortTitle
      */
     public void sortTitleOnClicked(Button button) {
-
+        sortBy = "title";
         songAnalytics = fileReader.sortBy(songAnalytics, 3);
         pageNum = 1;
 
@@ -257,7 +262,7 @@ public class GUI {
      * OnClicked for sortYear
      */
     public void sortYrOnClicked(Button button) {
-
+        sortBy = "year";
         songAnalytics = fileReader.sortBy(songAnalytics, 1);
         pageNum = 1;
 
@@ -269,9 +274,9 @@ public class GUI {
      * OnClicked for sortGenre
      */
     public void sortGenreOnClicked(Button button) {
-
+        sortBy = "genre";
         songAnalytics = fileReader.sortBy(songAnalytics, 2);
-
+        
         pageNum = 1;
         update();
     }

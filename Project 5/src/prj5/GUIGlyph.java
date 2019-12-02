@@ -49,7 +49,7 @@ public class GUIGlyph {
      * @param legendOption
      *            LegendOption given
      */
-    public GUIGlyph(SongAnalytics sA, Position pos, int legendOption) {
+    public GUIGlyph(SongAnalytics sA, Position pos, int legendOption, String sortBy) {
         songs = sA.getSong();
         SA = sA;
         int[] HL = sA.getLegendPercentagesForSong(legendOption + 1);
@@ -86,6 +86,13 @@ public class GUIGlyph {
         bar44 = new Shape(pos.getPosX(), pos.getPosY() + 30, likesLength, 10,
             Color.green);
         divider = new Shape(pos.getPosX(), pos.getPosY(), 5, 40, Color.black);
+        
+        if(sortBy.equals("year")){
+            auth.setText("Year : " + SA.getSong().getYear());
+        } else if(sortBy.equals("genre")){
+            auth.setText("Genre : " + SA.getSong().getGenre());
+        } 
+
 
     }
 
