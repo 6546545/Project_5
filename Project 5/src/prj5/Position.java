@@ -26,37 +26,45 @@ public enum Position {
     TOP_RIGHT(720, 50),
     MID_RIGHT(720, 150),
     BTM_RIGHT(720, 250);
-/**
- * The X Position
- */
+    /**
+     * The X Position
+     */
     private final int posX;
     /**
      * The Y Position
      */
     private final int posY;
 
-/**
- * The Position Constructor
- * @param posX the X Position
- * @param posY the Y Position
- */
+
+    /**
+     * The Position Constructor
+     * 
+     * @param posX
+     *            the X Position
+     * @param posY
+     *            the Y Position
+     */
     Position(int posX, int posY) {
         this.posX = posX;
         this.posY = posY;
     }
 
-/**
- * Gets the X Position
- * @return returns the X Position as an int
- */
+
+    /**
+     * Gets the X Position
+     * 
+     * @return returns the X Position as an int
+     */
     public int getPosX() {
         return posX;
     }
 
-/**
- * Gets the Y Position
- * @return returns the Y Position as an int
- */
+
+    /**
+     * Gets the Y Position
+     * 
+     * @return returns the Y Position as an int
+     */
     public int getPosY() {
         return posY;
     }

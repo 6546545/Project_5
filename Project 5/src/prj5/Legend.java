@@ -18,6 +18,7 @@ import CS2114.TextShape;
  */
 
 public class Legend {
+
     /**
      * Public Variables
      */
@@ -69,7 +70,7 @@ public class Legend {
 
 
     /**
-     * Legend
+     * Legend constructor - Layout for the Legend box
      */
     public Legend() {
         title = new TextShape(870, 190, "");

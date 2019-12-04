@@ -16,6 +16,7 @@ import CS2114.TextShape;
  */
 
 public class GUIGlyph {
+
     /**
      * Private Vars
      */
@@ -40,7 +41,8 @@ public class GUIGlyph {
 
 
     /**
-     * Constructor
+     * Constructor - Prints the details and data on to the screen based on the
+     * position
      * 
      * @param sA
      *            songAnalytics given
@@ -48,8 +50,14 @@ public class GUIGlyph {
      *            Position given
      * @param legendOption
      *            LegendOption given
+     * @param sortBy
+     *            Sort By String
      */
-    public GUIGlyph(SongAnalytics sA, Position pos, int legendOption, String sortBy) {
+    public GUIGlyph(
+        SongAnalytics sA,
+        Position pos,
+        int legendOption,
+        String sortBy) {
         songs = sA.getSong();
         SA = sA;
         int[] HL = sA.getLegendPercentagesForSong(legendOption + 1);
@@ -86,13 +94,13 @@ public class GUIGlyph {
         bar44 = new Shape(pos.getPosX(), pos.getPosY() + 30, likesLength, 10,
             Color.green);
         divider = new Shape(pos.getPosX(), pos.getPosY(), 5, 40, Color.black);
-        
-        if(sortBy.equals("year")){
-            auth.setText("Year : " + SA.getSong().getYear());
-        } else if(sortBy.equals("genre")){
-            auth.setText("Genre : " + SA.getSong().getGenre());
-        } 
 
+        if (sortBy.equals("year")) {
+            auth.setText("Year : " + SA.getSong().getYear());
+        }
+        else if (sortBy.equals("genre")) {
+            auth.setText("Genre : " + SA.getSong().getGenre());
+        }
 
     }
 
@@ -100,7 +108,7 @@ public class GUIGlyph {
     /**
      * GetBar1
      * 
-     * @return bar1 The first bar
+     * @return Shape- The Heard Bar for Option 1
      */
     public Shape getBar1() {
         return bar1;
@@ -111,7 +119,8 @@ public class GUIGlyph {
      * Set Bar1
      * 
      * @param bar1
-     *            The bar being set
+     *            The Heard Bar for Option 1
+     * 
      */
     public void setBar1(Shape bar1) {
         this.bar1 = bar1;
@@ -121,7 +130,7 @@ public class GUIGlyph {
     /**
      * GetBar2
      * 
-     * @return Bar2
+     * @return Shape- The Heard Bar for Option 2
      */
     public Shape getBar2() {
         return bar2;
@@ -132,7 +141,8 @@ public class GUIGlyph {
      * SetBar2
      * 
      * @param bar2
-     *            Bar 2
+     *            The Heard Bar for Option 2
+     * 
      */
     public void setBar2(Shape bar2) {
         this.bar2 = bar2;
@@ -142,7 +152,7 @@ public class GUIGlyph {
     /**
      * GetBar3
      * 
-     * @return bar 3
+     * @return Shape- The Heard Bar for Option 3
      */
     public Shape getBar3() {
         return bar3;
@@ -153,7 +163,8 @@ public class GUIGlyph {
      * Sets Bar 3
      * 
      * @param bar3
-     *            the bar getting set
+     *            The Heard Bar for Option 3
+     * 
      */
     public void setBar3(Shape bar3) {
         this.bar3 = bar3;
@@ -163,7 +174,7 @@ public class GUIGlyph {
     /**
      * Get Bar 4
      * 
-     * @return bar 4
+     * @return Shape- The Heard Bar for Option 4
      */
     public Shape getBar4() {
         return bar4;
@@ -174,7 +185,7 @@ public class GUIGlyph {
      * Sets Bar 4
      * 
      * @param bar4
-     *            the bar being set
+     *            The Heard Bar for Option 4
      */
     public void setBar4(Shape bar4) {
         this.bar4 = bar4;
@@ -184,7 +195,7 @@ public class GUIGlyph {
     /**
      * Gets the Divider
      * 
-     * @return returns divider
+     * @return Shape- Divider
      */
     public Shape getDivider() {
         return divider;
@@ -205,7 +216,7 @@ public class GUIGlyph {
     /**
      * Gets Song Title
      * 
-     * @return returns song TextShape
+     * @return TextShape- Song Title
      */
     public TextShape getSong() {
         return song;
@@ -226,7 +237,7 @@ public class GUIGlyph {
     /**
      * Gets Song Analytics
      * 
-     * @return returns SongAnalytics
+     * @return SongAnalytics- Returns SA
      */
     public SongAnalytics getSA() {
         return SA;
@@ -247,7 +258,7 @@ public class GUIGlyph {
     /**
      * Returns the song in the glyph.
      * 
-     * @return Song
+     * @return Song- the Songs
      */
 
     public Song getSongs() {
@@ -256,10 +267,11 @@ public class GUIGlyph {
 
 
     /**
-     * Sets the Song
+     * Sets the Songs
      * 
      * @param songs
-     *            the Song paramater
+     *            the Songs to set
+     * 
      */
     public void setSongs(Song songs) {
         this.songs = songs;
@@ -269,7 +281,7 @@ public class GUIGlyph {
     /**
      * Gets the Likes Bar
      * 
-     * @return returns Bar11
+     * @return Shape- the Likes Bar for Option 1
      */
     public Shape getBar11() {
         return bar11;
@@ -280,7 +292,7 @@ public class GUIGlyph {
      * Sets Bar11
      * 
      * @param bar11
-     *            the bar being set
+     *            the Likes bar for Option 1
      */
     public void setBar11(Shape bar11) {
         this.bar11 = bar11;
@@ -290,7 +302,7 @@ public class GUIGlyph {
     /**
      * Gets the Likes Bar 22
      * 
-     * @return returns bar22
+     * @return Shape- the Likes Bar for Option 2
      */
     public Shape getBar22() {
         return bar22;
@@ -301,7 +313,8 @@ public class GUIGlyph {
      * Sets Bar22
      * 
      * @param bar22
-     *            the likes bar that is being set
+     *            the Likes bar for Option 2
+     * 
      */
     public void setBar22(Shape bar22) {
         this.bar22 = bar22;
@@ -311,7 +324,7 @@ public class GUIGlyph {
     /**
      * Gets the Likes Bar 33
      * 
-     * @return returns bar33
+     * @return Shape- Likes bar for Option 3
      */
     public Shape getBar33() {
         return bar33;
@@ -322,6 +335,7 @@ public class GUIGlyph {
      * Sets Bar33
      * 
      * @param bar33
+     *            the Likes bar for Option 3
      */
     public void setBar33(Shape bar33) {
         this.bar33 = bar33;
@@ -331,7 +345,7 @@ public class GUIGlyph {
     /**
      * Gets the Likes Bar 44
      * 
-     * @return returns bar44
+     * @return Shape- bar44(Likes Bar for Option 4)
      */
     public Shape getBar44() {
         return bar44;
@@ -342,6 +356,7 @@ public class GUIGlyph {
      * Sets Bar44
      * 
      * @param bar44
+     *            the Likes Bar for Option 4
      */
     public void setBar44(Shape bar44) {
         this.bar44 = bar44;
@@ -351,7 +366,7 @@ public class GUIGlyph {
     /**
      * Gets song author
      * 
-     * @return returns the song author
+     * @return the song's author
      */
     public TextShape getAuth() {
         return auth;
@@ -362,7 +377,7 @@ public class GUIGlyph {
      * Sets the song author
      * 
      * @param auth
-     *            TextShape
+     *            Author's TextShape
      */
     public void setAuth(TextShape auth) {
         this.auth = auth;
@@ -372,7 +387,7 @@ public class GUIGlyph {
     /**
      * Gets the amount of people who have heard of the songs
      * 
-     * @return returns heardLength
+     * @return int- heardLength
      */
     public int getHL() {
         return heardLength;
@@ -383,7 +398,7 @@ public class GUIGlyph {
      * Sets heardLength
      * 
      * @param heardLength
-     *            int
+     *            the Length of the Heard Bar
      */
     public void setHL(int heardLength) {
         this.heardLength = heardLength;
@@ -393,7 +408,7 @@ public class GUIGlyph {
     /**
      * Gets the length of the like bar
      * 
-     * @param int
+     * @return int- likesLength
      */
     public int getLL() {
         return likesLength;
@@ -404,7 +419,7 @@ public class GUIGlyph {
      * Sets the LikesLength
      * 
      * @param likesLength
-     *            int
+     *            the Legnth of the Likes Bar
      */
     public void setLL(int likesLength) {
         this.likesLength = likesLength;

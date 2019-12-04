@@ -18,10 +18,10 @@ import CS2114.WindowSide;
  */
 
 public class GUI {
+
     /**
      * Lots of Private Variables
      */
-
     private Button prev;
     private Button next;
     private Button sortArt;
@@ -41,12 +41,12 @@ public class GUI {
     private int pageNum = 0;
     private int legendOption = 0;
     private int maxPage = 0;
-    
+
     private String sortBy = "";
 
 
     /**
-     * Default Constructor
+     * Default Constructor - Initializes everything.
      * 
      */
     public GUI(FileReader FR) {
@@ -134,9 +134,11 @@ public class GUI {
 
 
     /**
-     * Hobby Legend
+     * Hobby Legend - Default legend that is always
+     * displayed if hobby is selected
      * 
      * @param Legend
+     *            The Legend
      */
     private void hobbyLegend(Legend legend) {
         window.addShape(legend.legendBox);
@@ -178,12 +180,11 @@ public class GUI {
      * 
      * @param SA
      *            SongAnalytic SA
-     * 
+     * @param p
+     *            Position P
      */
     private void printDetails(SongAnalytics songAnalytics, Position p) {
         GUIGlyph temp = new GUIGlyph(songAnalytics, p, legendOption, sortBy);
-
-        
 
         // Adds the Glyph to the Window
         window.addShape(temp.getBar1());
@@ -204,7 +205,10 @@ public class GUI {
 
 
     /**
-     * OnClicked for previous
+     * OnClicked for previous - Checks for valid page number
+     * 
+     * @param button
+     *            Previous Button
      */
     public void prevOnClicked(Button button) {
         if (pageNum > 1) {
@@ -216,7 +220,10 @@ public class GUI {
 
 
     /**
-     * OnClicked for next
+     * OnClicked for next - Checks for valid page number
+     * 
+     * @param button
+     *            Next Button
      */
     public void nextOnClicked(Button button) {
         prev.enable();
@@ -235,7 +242,10 @@ public class GUI {
 
 
     /**
-     * OnClicked for sortArt
+     * OnClicked for sortArt - Sorts by artist name alfabetically
+     * 
+     * @param button
+     *            Sort Artists Button
      */
     public void sortArtOnClicked(Button button) {
         sortBy = "artist";
@@ -247,7 +257,10 @@ public class GUI {
 
 
     /**
-     * OnClicked for sortTitle
+     * OnClicked for sortTitle - Sorts by title name alfabetically
+     * 
+     * @param button
+     *            Sort By Title Button
      */
     public void sortTitleOnClicked(Button button) {
         sortBy = "title";
@@ -259,7 +272,10 @@ public class GUI {
 
 
     /**
-     * OnClicked for sortYear
+     * OnClicked for sortYear =- Sorts by year name numerically
+     * 
+     * @param button
+     *            Sort Year Button
      */
     public void sortYrOnClicked(Button button) {
         sortBy = "year";
@@ -271,19 +287,25 @@ public class GUI {
 
 
     /**
-     * OnClicked for sortGenre
+     * OnClicked for sortGenre - Sorts by genre alphabetically
+     * 
+     * @param button
+     *            Sort Genre Button
      */
     public void sortGenreOnClicked(Button button) {
         sortBy = "genre";
         songAnalytics = fileReader.sortBy(songAnalytics, 2);
-        
+
         pageNum = 1;
         update();
     }
 
 
     /**
+     * OnClicked for RepHobby - Changes values of each bar based on hobby
      * 
+     * @param button
+     *            Represent Hobby Button
      */
     public void repHobbyOnClicked(Button button) {
         legendOption = 0;
@@ -294,7 +316,11 @@ public class GUI {
 
 
     /**
+     * onClicked for repMaj - Changes values of each bar based on hobby -
+     * Changes the lengend to represent Majors.
      * 
+     * @param button
+     *            Represent Major Button
      */
     public void repMajOnClicked(Button button) {
         legendOption = 2;
@@ -319,7 +345,10 @@ public class GUI {
 
 
     /**
+     * OnClicked for RepRegion - Changes the legend to represent regions.
      * 
+     * @param button
+     *            Represent Region button
      */
     public void repRegOnClicked(Button button) {
         legendOption = 1;
@@ -344,7 +373,10 @@ public class GUI {
 
 
     /**
-     * Quit Program Method
+     * OnClicked for Quit button - Exits the program.
+     * 
+     * @param quit
+     *            Quit Button
      */
     public void quitOnClicked(Button quit) {
         System.exit(0);
@@ -352,7 +384,7 @@ public class GUI {
 
 
     /**
-     * 
+     * Update - Updates the glyphs in the window.
      */
     private void update() {
         window.removeAllShapes();
@@ -485,6 +517,9 @@ public class GUI {
     }
 
 
+    /**
+     * Update LegendBox - Updates the legend for each option.
+     */
     private void updateLegendBox() {
         window.addShape(legend.legendBox);
         window.addShape(legend.legendBox2);

@@ -22,16 +22,17 @@ import java.util.Scanner;
 public class FileReader {
 
     /**
-     * asdf
+     * Private Vairables
      */
     private DLLinkedListNodes<Song> songs;
-// private DLLinkedListNodes<Student> students;
     private DLLinkedListNodes<SongAnalytics> songAnalytics;
     private SongAnalytics[] SA;
 
 
     /**
-     * asdf
+     * Contructor which
+     * Calles two methods to read in from two files.
+     * Then sends it to sorting
      */
     public FileReader(String fileName1, String fileName2)
         throws FileNotFoundException {
@@ -57,9 +58,11 @@ public class FileReader {
 
 
     /**
-     * @throws FileNotFoundException
-     *             d
+     * songReader - Reads in all the songs and stores each song into it's own
+     * Song object
      * 
+     * @throws FileNotFoundException
+     *             Thrown if no file was found.
      */
     private void songsReader(String fileName1) throws FileNotFoundException {
         String str = "";
@@ -98,9 +101,13 @@ public class FileReader {
 
 
     /**
-     * @throws FileNotFoundException
-     *             d
+     * studentReader - Reads in every student's list of options and adds a
+     * tally for every time the person has heard and liked or just heard that
+     * song along with their repected major, location, and hobby.
+     * The tallies for every song is stored in SongAnalytics
      * 
+     * @throws FileNotFoundException
+     *             Thrown if no file was found. *
      */
     private void studentReader(String fileName2) throws FileNotFoundException {
         ArrayList<String> studentAnswers = new ArrayList<String>();
@@ -194,8 +201,8 @@ public class FileReader {
             }
             for (int column = 5; column < length; column++) {
 
-                if ((column - 5) % 2 == 0) { // && songCounter < songs.size()) {
-
+                if ((column - 5) % 2 == 0) {
+                    // Tallies are calculated
                     SA[songCounter].addToTallyTotal(0, indexJHobby / 2);
                     SA[songCounter].addToTallyTotal(1, indexJLocation / 2);
                     SA[songCounter].addToTallyTotal(2, indexJMajor / 2);
@@ -247,6 +254,8 @@ public class FileReader {
 
 
     /**
+     * getSongs
+     * 
      * @return the songs
      */
     public DLLinkedListNodes<Song> getSongs() {
@@ -255,6 +264,8 @@ public class FileReader {
 
 
     /**
+     * getSongAnalytics
+     * 
      * @return the songAnalytics
      */
     public DLLinkedListNodes<SongAnalytics> getSongAnalytics() {
@@ -263,7 +274,9 @@ public class FileReader {
 
 
     /**
-     * @return the sA
+     * getSA
+     * 
+     * @return SongAnalytics[] sA (Song Analytics)
      */
     public SongAnalytics[] getSA() {
         return SA;
@@ -271,8 +284,10 @@ public class FileReader {
 
 
     /**
+     * copyIntoDLLinked - Copies every SongAnalytics from the
+     * array to a DLLinkedListNodes
      * 
-     * @return sdfg
+     * @return DLLinkedListNodes<SongAnalytics>
      */
     private DLLinkedListNodes<SongAnalytics> copyIntoDLLinked() {
         DLLinkedListNodes<SongAnalytics> temp =
@@ -285,7 +300,9 @@ public class FileReader {
 
 
     /**
-     * asdf
+     * getDLLLNSongAnalytics - Gets Song Analytics
+     * 
+     * @return DLLinkedListNodes<SongAnalytics> songAnalytics
      */
     public DLLinkedListNodes<SongAnalytics> getDLLLNSongAnalytics() {
         return songAnalytics;
@@ -293,13 +310,13 @@ public class FileReader {
 
 
     /**
+     * sortBy - sorts based on year, genre, title, and artist
      * 
      * @param saNodes
-     *            d
+     *            The Song Analytics linked list nodes to be sorted
      * @param type
-     *            d
      *            (1 is year, 2 is genre, 3 is title, 4 is artist)
-     * @return
+     * @return DLLinkedListNodes<SongAnalytics> finalSA
      */
     public DLLinkedListNodes<SongAnalytics> sortBy(
         DLLinkedListNodes<SongAnalytics> saNodes,

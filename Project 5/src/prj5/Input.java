@@ -11,12 +11,12 @@ import java.io.FileNotFoundException;
 public class Input {
 
     /**
-     * Main
+     * Main - Starts the FileReader and GUI
      * 
      * @param args
-     *            m
+     *            Given
      * @throws FileNotFoundException
-     *             m
+     *             Throws if no file was found.
      */
     public static void main(String[] args) throws FileNotFoundException {
 

@@ -22,6 +22,7 @@ public class SongAnalyticsTest extends TestCase {
      */
     private SongAnalytics sa;
 
+
     /**
      * Sets up any private vairables if needed
      */
@@ -29,30 +30,6 @@ public class SongAnalyticsTest extends TestCase {
         Song song = new Song("All of Me", "John Legend", "2016", "Pop");
         sa = new SongAnalytics(song);
     }
-
-
-    // /**
-    //  * testAddToTally
-    //  */
-    // public void testAddToTally() {
-    //     sa.addToTally(1, 1);
-    // }
-
-
-    // /**
-    //  * testAddToTallyTotal
-    //  */
-    // public void testAddToTallyTotal() {
-        
-    // }
-
-
-    // /**
-    //  * testSubtractFromTallyTotal
-    //  */
-    // public void testSubtractFromTallyTotal() {
-        
-    // }
 
 
     /**

@@ -28,6 +28,7 @@ public class FileReaderTest extends TestCase {
      * Sets Up any private variables for testing
      * 
      * @throws FileNotFoundException
+     *             Thrown if no file was found.
      */
     public void setUp() throws FileNotFoundException {
         fr = new FileReader("SongList2019F.csv", "MusicSurveyData2019F.csv");
@@ -37,7 +38,8 @@ public class FileReaderTest extends TestCase {
     /**
      * testGetSongs
      * 
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException 
+     *             Thrown if no file was found.
      */
     public void testGetSongs() throws FileNotFoundException {
         boolean thrown = false;
@@ -59,6 +61,7 @@ public class FileReaderTest extends TestCase {
      * testGetSongAnalytics
      * 
      * @throws FileNotFoundException
+     *             Thrown if no file was found.
      */
     public void testGetSongAnalytics() throws FileNotFoundException {
         assertEquals(fr.getSongAnalytics().get(1).toStringHobbyPercentage(),
@@ -74,6 +77,7 @@ public class FileReaderTest extends TestCase {
      * testGetSA
      * 
      * @throws FileNotFoundException
+     *             Thrown if no file was found.
      */
     public void testGetSA() throws FileNotFoundException {
         assertEquals(fr.getSA()[1].toStringHobbyPercentage(),
@@ -89,6 +93,7 @@ public class FileReaderTest extends TestCase {
      * testing other stuff
      * 
      * @throws FileNotFoundException
+     *             Thrown if no file was found.
      */
     public void testOther() throws FileNotFoundException {
         DLLinkedListNodes<SongAnalytics> s = fr.sortBy(fr.getSongAnalytics(),

@@ -25,7 +25,7 @@ public class Song {
 
 
     /**
-     * Constructor
+     * Constructor - Creates the Song Object
      * 
      * @param titleString
      *            the song title

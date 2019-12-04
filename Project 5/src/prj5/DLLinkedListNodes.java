@@ -363,6 +363,7 @@ public class DLLinkedListNodes<T> {
      * 
      * @author Andy Gould, Dwarakh Nayam, and Kevin Kapros
      * @param T
+     *            Generic Type
      * 
      */
     private class DLListIterator<T> implements Iterator<T> {

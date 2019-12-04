@@ -92,8 +92,8 @@ public class SongAnalytics {
      * @param j
      *            column value
      * @param total
-     *            d
-     * @return d
+     *            The total number of people in that group
+     * @return The percentage
      */
     public int getYesPercentage(int i, int j, int total) {
         if (total == 0) {
@@ -104,14 +104,15 @@ public class SongAnalytics {
 
 
     /**
-     * getYesPercentageInBuilt
+     * getYesPercentageInBuilt -
+     * Gets the percentage of an option inside a legend option
      * 
      * @param i
      *            row value
      * @param j
      *            column value
      *
-     * @return d
+     * @return The percentage
      */
     public int getYesPercentageInBuilt(int i, int j) {
 
@@ -125,7 +126,7 @@ public class SongAnalytics {
     /**
      * toStringHobbyPercentage
      * 
-     * @return String s
+     * @return String of all the Songs data with respect to hobby
      */
     public String toStringHobbyPercentage() {
         String answer = null;
@@ -154,7 +155,7 @@ public class SongAnalytics {
     /**
      * toStringLocationPercentage
      * 
-     * @return String
+     * @return String of all the Songs data with respect to location
      */
     public String toStringLocationPercentage() {
         String answer = null;
@@ -184,7 +185,7 @@ public class SongAnalytics {
     /**
      * toStringMajorPercentage
      * 
-     * @return String s
+     * @return String of all the Songs data with respect to major
      */
     public String toStringMajorPercentage() {
         String answer = null;
